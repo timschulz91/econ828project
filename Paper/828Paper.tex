@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+
+
+\title{Econ 828 Term Project:\\ How much is too much?\\
+		Beliefs about perceived inequality in a coordination game}
+\author{Tim Schuz}
+\date{Summer 2016}
+
+\begin{document}
+	\maketitle
+	\section{Introduction}
+	\section{Litereature Review}
+	\section{Theoretical Framework}
+	\subsection{Payoffs}
+	The underlying model of the coordination game in this paper is that of a stag hunt with the added dimension of a third party whose decisions potentially affect the payoffs of the other two players who try to coordinate. In the context of inequality, the poor are the parties that play the traditional stag hunt game while the rich person has influence over the exact form of the game by deciding whether to purchase insurance. The resulting payoffs for poor players are shown in Table \ref{gpayoff}.
+	
+	\begin{table}[!htbp]
+		\caption{General Payoffs of Poor}
+		\label{gpayoff}
+		\begin{center}
+		\begin{tabular}{|l|c|c|c|l|c|c|}
+			\multicolumn{3}{c}{Under \texttt{no insurance} $(n)$} &
+			\multicolumn{1}{c}{} &
+			\multicolumn{3}{c}{Under \texttt{insurance} $(i)$}\\
+			\cline{1-3}\cline{5-7}
+			& revolt & do nothing & & & revolt & do nothing\\
+			\cline{1-3}\cline{5-7}
+			revolt & $h_n, h_n$ & $l_n, m_n$ && revolt & $h_i, h_i$ & $l_i, m_i$\\
+			\cline{1-3}\cline{5-7}
+			do nothing & $m_n, l_n$ & $m_n, m_n$ && do nothing & $m_i, l_i$ & $m_i, m_i$\\
+			\cline{1-3}\cline{5-7}
+		\end{tabular}
+		\end{center}
+		\footnotesize
+		Payoffs of poor players depending on the other poor player's decision and depending on whether the rich person opted for insurance. 
+	\end{table}
+	
+	In order to correctly represent the classical stag hunt game, it has to be the case that the high payoff for successfully coordinating on the payoff dominant strategy is greater than the medium payoff for playing from playing the risk dominant strategy, which in turn is greater than the payoff from unsuccessfully playing the risky strategy. That is, $h_j > m_j > l_j$ in both the \texttt{no insurance} and the \texttt{insurance} case (i.e. $\forall j\in\{n, i\}$). Additionally, successful coordination on the risky action results in the same payoff regardless of the actions of the rich player ($h_n=h_i=h$) and not revolting is risk free not only within a game but also across the two different games resulting from the rich's decisions ($m_n=m_i=m$). Lastly, revolting unsuccessfully is worse if the rich player takes out insurance ($l_i<l_n$) and can be seen as the rich person ``fighting back". These assumptions yield a simplified payoff table for poor players shown in Table \ref{spayoff}.
+	
+	\begin{table}[!htbp]
+		\caption{Simplified Payoffs of Poor}
+		\label{spayoff}
+		\centering
+		\begin{tabular}{|l|c|c|}
+			\hline
+			& revolt & do nothing\\
+			\hline
+			revolt & $h, h$ & $l_j, m$\\
+			\hline
+			do nothing & $m, l_j$ & $m, m$\\
+			\hline
+		\end{tabular}\\
+		\footnotesize Where $j\in\{i, n\}$ and $l_n>l_i$.
+	\end{table}
+	
+	The decision made by the rich player is that of purchasing insurance against a possible revolution. His payoffs depend on whether a revolution was attempted and, if so, whether it was successful. Since a revolutions is only successful if both poor players decide to play the risky action of ``revolt" , this case corresponds to the outcome with two revolutionaries. An outcome with only one revolutionary represents an unsuccessful revolution and zero revolutionaries mean nobody tried to revolt.
+	
+	If a revolutions is successful, having insurance has no effect on the rich's payoffs. That is, in terms of Table \ref{rpayoffs}, $y_{2i}=y{2n}=y_2$. Instead, insurance is only effective in the case of no or failed revolutions (here denoted by the subscript $f$): $y_{0i}=y_{1i}=y{fi}$. This is better than the outcome $y_{1n}$, which represents an attempted but unsuccessful revolutions and can be thought of as being damaging to the rich nonetheless. The best possible outcome for the rich player is not buying insurance and none of the poor attempting a revolution resulting in $y_{0n}$.\footnote{In summary: $y_{0n} > y_{0i}=y_{1i}=y_{fi} > y_{1n} > y_{2i}=y_{2n}=y_2$} Purchasing insurance can therefore be thought of as costing $y_{0n}-y_{fi}$ and paying out $y_{fi}-y_{1n}$ in the case of a failed revolution attempt.
+	
+	\begin{table}[!htbp]
+		\caption{Payoffs of Rich}
+		\label{rpayoffs}
+		\centering
+		\begin{tabular}{|c||c|c|c|c||c|c|}
+			\multicolumn{3}{c}{General Form} &
+			\multicolumn{1}{c}{} &
+			\multicolumn{3}{c}{Simplified Form}\\
+			\cline{1-3}\cline{5-7}
+			number of & & no & & number of & & no\\
+			revolutionaries & insurance & insurance && revolutionaries & insurance & insurance\\
+			\cline{1-3}\cline{5-7}
+			0 & $y_{0i}$ & $y_{0n}$ && 0 & $y_{fi}$ & $y_{0n}$\\
+			\cline{1-3}\cline{5-7}
+			1 & $y_{1i}$ & $y_{1n}$ && 1 & $y_{fi}$ & $y_{1n}$\\
+			\cline{1-3}\cline{5-7}
+			2 & $y_{2i}$ & $y_{2n}$ && 2 & $y_2$ & $y_2$\\
+			\cline{1-3}\cline{5-7}
+		\end{tabular}
+	\end{table}
+	
+	\subsection{Decision Making Process}
+	Given these payoffs, a rational poor player will choose to revolt conditional on beliefs about what the other poor player will do and whether the rich person will buy insurance.
+	
+\end{document}
