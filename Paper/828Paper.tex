@@ -2,6 +2,8 @@
 
 \usepackage{fullpage}
 \usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{setspace}
 
 
 \title{Econ 828 Term Project:\\ How much is too much?\\
@@ -11,6 +13,7 @@
 
 \begin{document}
 	\maketitle
+	\doublespacing
 	\section{Introduction}
 	\section{Litereature Review}
 	\section{Theoretical Framework}
@@ -82,6 +85,116 @@
 	\end{table}
 	
 	\subsection{Decision Making Process}
-	Given these payoffs, a rational poor player will choose to revolt conditional on beliefs about what the other poor player will do and whether the rich person will buy insurance.
+	Given these payoffs, a rational poor player will choose to revolt 
+	conditional on beliefs about what the other poor player will do and whether 
+	the rich person will buy insurance. Let a poor player believe that the 
+	other poor player chooses to revolt with probability $\gamma$ and that the 
+	rich player purchases insurance with probability $\delta$. Then a payoff 
+	maximizing poor person will revolt if
+	$$\gamma h + (1-\gamma)\left[ (1-\delta)l_n + \delta l_i \right] \geq m $$
+	
+	A rich person will decide to purchase insurance based on his beliefs about 
+	how many poor players will choose to revolt. In the most general case, let 
+	a rich player believe that there are zero revolutionaries with probability 
+	$\alpha$, one revolutionary with probability $\beta$ and two 
+	revolutionaries with probability $1-\alpha-\beta$. Then a rich player will 
+	purchase insurance if
+	\begin{align*}
+		(\alpha+\beta)Y_{fi} + (1-\alpha-\beta)y_2 &\geq \alpha y_{0n} + \beta 
+		y_{1n} + (1-\alpha-\beta)y_2\\
+		(\alpha+\beta)Y_{fi} &\geq \alpha y_{0n} + \beta y_{1n}\\
+	\end{align*}
+	Assuming independent and identical poor players, $\alpha=(1-\gamma)^2$, 
+	$\beta=2\gamma(1-\gamma)$ and $(1-\alpha-\beta)=\gamma^2$. Using this 
+	simplification, rich players buy insurance if
+	$$ \left[(1-\gamma)^2 + 2\gamma(1-\gamma)\right]y_{fi} \geq 
+	(1-\gamma)^2y_{0n} + 2\gamma(1-\gamma)y_{1n} $$
+	which simplifies to
+	\begin{equation}\tag{I}
+		\label{I}
+		\gamma \geq \frac{y_{0n} - y_{fi}}{y_{fi} + y_{0n} -2y_{1n}} \equiv 
+		\gamma_1.
+	\end{equation}
+	
+	For the decision making process of poor players, this means that if their 
+	belief of the other poor player's probability of revolting satisfies 
+	condition (\ref{I}), they believe that the rich player will purchase 
+	insurance for sure (i.e. $\delta=1$). Considering these second order 
+	beliefs, given that $\gamma>\gamma_1$, the poor player chooses to revolt if
+	\begin{align*}
+		\gamma h + (1-\gamma)l_i &\geq m\\
+		\gamma &\geq \frac{m-l_i}{h-l_i} \equiv \gamma_2. \tag{RI}\label{RI}
+	\end{align*}
+	
+	If the poor player believes the other poor player to be sufficiently 
+	unlikely to revolt so that the rich player does not purchase insurance 
+	(condition (\ref{I}) is not satisfied and $\gamma<\gamma1$), he will only 
+	revolt if
+	\begin{align*}
+		\gamma h _ (1-\gamma)l_n &\geq m\\
+		\gamma &\geq \frac{m-l_n}{h-l_n} \equiv \gamma_3. \tag{RN}\label{RN}
+	\end{align*}
+	
+	Combining conditions (\ref{I}), (\ref{RI}) and (\ref{RN}), poor players will
+	\begin{enumerate}
+		\item revolt under insurance if $\gamma \geq \max (\gamma_1, \gamma_2)$
+		\item not revolt due to the presence of insurance if $\gamma_1 \leq 
+		\gamma < \gamma_2$
+		\item revolt under no insurance if $\gamma_3 \leq \gamma < \gamma_1$
+		\item not revolt under no insurance if $\gamma < \min (\gamma_1, 
+		\gamma_3)$
+	\end{enumerate}
+	
+	\subsection{Possible Ranges of Outcomes}
+	Since none of the conditions (\ref{I}), (\ref{RI}) and (\ref{RN}) 
+	contradict each other directly, the ranges of $\gamma$ described above can 
+	be arranged in various ways by choosing the payoffs of the rich and poor 
+	players appropriately. Depending on payoff, some of the cases above can be 
+	ruled out from occurring. Possible (rational) outcomes are
+	\begin{enumerate}[I.]
+		\item 	$0 \leq \gamma_3 < \gamma_1 < \gamma_2 \leq 0$\\
+				This is the only arrangement in which all four cases could 
+				potentially be observed. With low beliefs about the probability 
+				of revolution ($\gamma<\gamma_3$), the rich person does not 
+				purchase insurance and poor players do not risk revolting. For 
+				a slightly higher perceived probability 
+				($\gamma_3\leq\gamma<\gamma_1$), it is still not worth 
+				purchasing insurance for the rich player, but poor players 
+				still try to revolt. For $\gamma_1\leq\gamma<\gamma_2$, the 
+				rich player buys insurance which in turn deters poor players 
+				from attempting a revolution as the consequences of failure are 
+				now graver than they were without insurance. If a revolution is 
+				believed to be likely ($\gamma\geq\gamma_2$), the rich player 
+				still purchases insurance on the off-chance that the revolution 
+				fails (if the revolution is successful, the outcome for the 
+				rich person is the same regardless of insurance) and poor 
+				players decide to revolt.
+		\item	$0 \leq \gamma_3 < \gamma_2 < \gamma_1 \leq 1$\\
+				The rich player does not purchase insurance for values of 
+				$\gamma$ below $\gamma_1$. If poor players also believe 
+				$\gamma<\gamma_3$, they will not revolt even in the absence of 
+				insurance. For $\gamma_3\leq\gamma_1$, poor revolt without 
+				facing the rich's insurance. If the beliefs exceed $\gamma_1$, 
+				the rich player buys insurance and the poor revolt.
+		\item	$0 \leq \gamma_2 < \gamma_3 < \gamma_1 \leq 1$\\
+				This case allows for identical outcomes as the one above since 
+				$\gamma_2$ is meaningless if $\gamma_2<\gamma_1$.
+		\item	$0 \leq \gamma_1 < \gamma_3 < \gamma_2 \leq 1$\\
+				There will be no insurance as long as players believe the 
+				probability of one poor player to revolt to be less than 
+				$\gamma_1$. For values above $\gamma_1$, the rich player buys 
+				insurance which deters poor players from revolting as long as 
+				beliefs about $\gamma$ are such that $\gamma<\gamma_2$. If the 
+				latter condition is not satisfied, the outcome will be a 
+				revolution under insurance.
+		\item	$0 \leq \gamma_1 < \gamma_2 < \gamma_3 \leq 1$\\
+				This is, again, equivalent to the case above as $\gamma_3$ 
+				carries no meaning if $\gamma_3 > \gamma_1$.
+		\item	$0 \leq \gamma_2 < \gamma_1 < \gamma_3 \leq 1$\\
+				This last case only allows for two possible outcomes: No 
+				insurance and no revolution if $\gamma<\gamma_1$ or revolution 
+				in the presence of insurance if the opposite is believed to be 
+				true.
+	\end{enumerate}
 	
 \end{document}
