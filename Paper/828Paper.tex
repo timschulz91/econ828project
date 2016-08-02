@@ -6,7 +6,9 @@
 \usepackage{setspace}
 \usepackage{bbm}
 \usepackage{graphicx}
-\usepackage{href}
+\usepackage{hyperref}
+\usepackage{framed}
+\usepackage{changepage}
 
 
 \title{Econ 828 Term Project:\\ How much is too much?\\
@@ -27,11 +29,12 @@
 	coordinate. In the context of inequality, the poor are the parties that 
 	play the traditional stag hunt game while the rich person has influence 
 	over the exact form of the game by deciding whether to purchase insurance. 
-	The resulting payoffs for poor players are shown in Table \ref{gpayoff}.
+	The resulting payoffs for poor players are shown in Table 
+	\ref{table:gpayoff}.
 	
 	\begin{table}[!htbp]
 		\caption{General Payoffs of Poor}
-		\label{gpayoff}
+		\label{table:gpayoff}
 		\begin{center}
 		\begin{tabular}{|l|c|c|c|l|c|c|}
 			\multicolumn{3}{c}{Under \texttt{no insurance} $(n)$} &
@@ -374,7 +377,7 @@
 	outside of $[0,1]$, a more appropriate Logit or Probit model would have to 
 	be used.
 	
-	\subsection{Initial Hypothesis}
+	\subsection{Initial Hypotheses}
 	A strong positive effect of higher inequality should be observable. Since 
 	poor people need to coordinate on one actions, anything from history to 
 	social norms suggests that subjects believe that the other subject is more 
@@ -400,7 +403,10 @@
 	
 	\section{Simulation Exercise}
 	A crude implementation in a Monte Carlo simulation\footnote{The script 
-	underlying this simulation can be found at \url{}} of the basics of the 
+	underlying this simulation can be found at 
+	\url{https://github.com/timschulz91/econ828project/blob/master/Simulation.ipynb}}
+	 of the basics of 
+	the 
 	model presented here verifies the relevance of the proposed research 
 	question. The simulation varies from the experiment in a few important 
 	aspects. First, ``subjects" (or in this case class instances) do not switch 
@@ -445,5 +451,107 @@
 	high enough that rich players purchase insurance, which in turn deters poor 
 	players from revolting. Only once inequality keeps increasing, poor players 
 	can again coordinate on the risky action of revolting.
+	
+	\section{Conclusion}
+	
+	\newpage
+	\section*{Appendix}
+	\subsection*{Instructions}
+	Welcome to the experiment and thank you for participating!
+	
+	If you follow these instructions, you can earn a considerable amount of 
+	money paid out in cash at the end of the experiment. Your earnings will 
+	depend on decisions you make during the course of this experiment and also 
+	on decisions that other participants make.
+	
+	During the experiment you must remain seated and are not allowed to 
+	communicate with other people in the room in any way. Please turn of any 
+	electronic devices and direct your attention solely at these instructions 
+	and the computer screen in front of you. If you have questions at any time, 
+	please raise your hand and an experimenter will come and answer your 
+	questions privately.
+	
+	\subsubsection*{The Experiment}
+	This experiment consists of 30 rounds plus 5 practice rounds in the 
+	beginning. Once the reading of these instructions concludes, the first 
+	practice round begins.
+	
+	In each round, you will be randomly assigned into a group with two other 
+	participants. The computer will randomly decide whether you are rich or 
+	poor. Each group consists of two poor and one rich person. For example, if 
+	you are determined to be poor, one other participant in your group will be 
+	poor as well while the third participant will be rich. If you are 
+	determined to be rich, both of the other two participants in your group are 
+	poor.
+	
+	In the beginning of a round, you will receive a number of points.
+	
+	If you are poor, you have the choice to revolt against the rich person or 
+	to not do anything and receive your points. A revolution 
+	can only be successful if both poor people decide to revolt. This means, if 
+	you decide to revolt, but the other poor participant in your group does 
+	not, your revolution will fail. In this case, you will lose points. 
+	Additionally, the number of 
+	points you lose depends on whether the rich participant purchases 
+	insurance against an attempted revolution (more on that later). If you 
+	revolt but fail, you lose more points if the rich participant has 
+	insurance. You do not lose as many points if your revolution fails when the 
+	rich participant did not have insurance.
+	If the revolution is successful, both poor participants will receive 
+	additional points (on top of the points you were given at the beginning of 
+	the round). 
+	
+	If you are rich, you have the choice to purchase insurance or not to 
+	purchase insurance. If you do not purchase insurance and neither of the 
+	poor participants in the group decides to revolt, you keep all the points 
+	you were given at the beginning of the round. If you do not purchase 
+	insurance, and one of the two poor participants chooses to revolt, you lose 
+	some of your points. If you decide to purchase insurance, you lose some 
+	points (the price of the insurance) but you do not lose as many points as 
+	you would without insurance if one of the poor participants revolts. With 
+	insurance, you will keep the same amount of points (after paying some 
+	points for the insurance) in the case of none or one of the poor 
+	participants choosing to revolt. That is, you are insured against failed 
+	revolutions. If both poor participants decide to revolt, you will lose all 
+	your points and the outcome is the same whether you bought insurance or not.
+	
+	All participants are shown the number of points they and all other 
+	participants would keep for all possible outcomes. Poor participants see 
+	how many points they would keep depending on whether the other poor 
+	participants decides to revolt and whether the rich participant has 
+	insurance. Poor participants also see how many points the rich participant 
+	keeps in each outcome. Likewise, if you are rich, you will see all possible 
+	payoffs for yourself and for the two poor participants in your group.
+	
+	Here is an example:
+	
+	\noindent\rule[0.5ex]{\linewidth}{1pt}
+		You are \textbf{poor} this round.\\		
+		You have 200 points. The rich participant has 500 points.\\		
+		This table shows how many points you will keep at the end of the round 
+		depending on what the other poor participant and the rich participant 
+		do.
+		
+	\begin{adjustwidth*}{-2cm}{-2cm}
+		\centering
+		\begin{tabular}{l|c|c|c|cl|c|c|}
+			\multicolumn{8}{c}{The rich participant has...}\\
+			\hline
+			\multicolumn{3}{c}{... no insurance} && \multicolumn{1}{c}{}&
+			\multicolumn{3}{c}{... insurance}\\
+			You... &\multicolumn{2}{c}{The other poor participant...} 
+			&&  & You...
+			&\multicolumn{2}{c}{The other poor participant...}\\
+			\cline{1-3}\cline{6-8}
+			& revolts & does not revolt &&&& revolts & does not 
+			revolt\\
+			\cline{2-3}\cline{7-8}
+			revolt & 300, 300 & 100, 200 &&& revolt & 300, 300 & 0, 200\\
+			\cline{1-3}\cline{6-8}
+			do not revolt & 200, 100 & 200, 200 &&& do not revolt &200, 0 & 
+			200, 200\\
+			\cline{2-3}\cline{7-8}
+		\end{tabular}
+	\end{adjustwidth*}
 	
 \end{document}

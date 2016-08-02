@@ -1,0 +1,11 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Motivation}{2}{0}{1}
+\beamer@sectionintoc {2}{Goals}{4}{0}{2}
+\beamer@sectionintoc {3}{Model}{11}{0}{3}
+\beamer@subsectionintoc {3}{1}{Payoffs}{11}{0}{3}
+\beamer@subsectionintoc {3}{2}{Decisions}{16}{0}{3}
+\beamer@subsectionintoc {3}{3}{Outcomes}{26}{0}{3}
+\beamer@sectionintoc {4}{Experiment}{32}{0}{4}
+\beamer@sectionintoc {5}{Simulation}{47}{0}{5}
+\beamer@sectionintoc {6}{Analysis}{52}{0}{6}
+\beamer@sectionintoc {7}{Hypotheses}{54}{0}{7}
